@@ -14,12 +14,8 @@ class Main : JavaPlugin(), Listener {
     @EventHandler
     fun placeChest(e: BlockPlaceEvent) {
         if (e.block.type == Material.CHEST) {
-            if (e.player.facing == BlockFace.NORTH) {
-                faceBlock(BlockFace.NORTH, e.block.location)
-            }
-            else if (e.player.facing == BlockFace.SOUTH) {
-                faceBlock(BlockFace.SOUTH, e.block.location)
-            }
+            faceBlock(e.player.facing, e.block.location)
+
         }
 
     }
